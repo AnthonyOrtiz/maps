@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<link href="css/jquery.gmaps.css" rel="stylesheet" />
+	<style>	 
+	.gmaps {
+	height:500px;
+	width: 100%;
+	}
+	#canvas{
+		width: 400px;
+		height: 100px;
+	}
+	</style>
+</head>
+<body>
+	<form >
+		
+		<!-- <div data-key="AIzaSyDbBnJHly_6rL9PXNA3r-WZsevGHhWRZUs" -->
+		<div data-key="AIzaSyAiKl_QPZ8L92aLRfpH23F5jzEuIETEhWw"
+		data-control-zoom="true"
+		data-control-type="true"
+		data-control-scale="true"
+		data-control-streetview="true"
+		data-control-rotate="true"
+		data-event-mousewheel="true"
+		 
+		data-zoom="14" role="map" class="gmaps">
+
+		<!-- items de ubicaciones -->
+	 
+		<div
+		
+		data-id="1"
+		data-lat="-20.363"
+		data-lng="111.044"
+		class="marker">
+		<div class="map-card">
+		<h1>This is my title 1</h1>
+		<p>Address: Fake street, #445, Stgo.</p>
+		<p>Phone: +56753223344</p>
+		<p>e-Mail: fake1@email.com</p>
+			
+
+		</div>
+
+		</div>
+	</div>
+	</form>
+	
+	<div id="canvas">
+		<canvas id="myChart" width="400" height="400"></canvas>
+	</div>
+	
+</body>
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="js/Chart.js-2.8.0/dist/Chart.bundle.min.js"></script>
+<script src="js/jquery.gmaps.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+	$('.gmaps').gmaps();
+	});
+</script>
+<script>
+//$('#asd').click(function () {
+// document.getElementById('asd').addEventListener('click', function() {
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+// });
+</script>
+
+</html>
